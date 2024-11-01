@@ -12,13 +12,11 @@ export const fetchTodos = async () => {
     }
 }
 
-export const fetchTodo = async (id: string | undefined) => {
+export const fetchTodo = async (id: string) => {
     try {
-        if (id) {
-            const response: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
-            const responseData: ITodo = response.data;
-            return responseData;
-        }
+        const response: AxiosResponse = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
+        const responseData: ITodo = response.data;
+        return responseData;
     } catch(error) {
         console.log(error)
     }

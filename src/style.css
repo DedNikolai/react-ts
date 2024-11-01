@@ -40,3 +40,11 @@ a {
     width: 30px;
     height: 30px;
 }
+
+.form-item {
+    margin: 10px 0;
+}
+
+.error {
+    color: red;
+}

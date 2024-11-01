@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Todos from "./pages/Todos";
 import TodoItemPage from './pages/TodoItemPage';
 import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App: FC = () =>  {
   return (
@@ -14,9 +16,10 @@ const App: FC = () =>  {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/todos" element={<Todos />} />
-          <Route path="/todos/:id" element={<TodoItemPage />} />
+          <Route path="/todos" element={<ProtectedRoute><Todos /></ProtectedRoute>} />
+          <Route path="/todos/:id" element={<ProtectedRoute><TodoItemPage /></ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </BrowserRouter>
     </div>

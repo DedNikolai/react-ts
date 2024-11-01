@@ -12,11 +12,13 @@ const TodoItem: FC = () => {
     const [todo, setTodo] = useState<ITodo | null>(null);
 
     useEffect(() => {
-        fetchTodo(id).then(result => {
-            if (result) {
-                setTodo(result);
-            }
-        })
+        if (id) {
+            fetchTodo(id).then(result => {
+                if (result) {
+                    setTodo(result);
+                }
+            })
+        }
     }, [])
 
     return (
